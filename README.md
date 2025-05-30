@@ -51,7 +51,7 @@ SMPVideo/
 ~~~
 
 Execute the following command:  
-`bash bash/Quickly_reproduce/run_all.sh`
+`bash bash/test/run_all.sh`
 
 | Log about   | Place to Put the File  |
 |------------|------------------------|
@@ -85,10 +85,10 @@ In theory, all of these files are provided in our GitHub repository, except for 
 The tests revealed that LightGBM is highly related to time, while CatBoost + MLP is more related to the volume of data. Therefore, the data was divided as mentioned above.
 
 Then Execute the following command:  
-`bash bash/Easy_reproduce/run_all.sh`
+`bash bash/Easy_train/run_all.sh`
 
 If you want to run a test, 
-simply execute `bash bash/Quickly_reproduce/run_all.sh`
+simply execute `bash bash/test/run_all.sh`
 
 
 **Note:** : After a simple training session, the original weight files will be overwritten.

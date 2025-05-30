@@ -9,10 +9,8 @@ fi
 
 set -e  # 遇到任何一个脚本报错就中止执行
 
-bash ./bash/Quickly_reproduce/run_mech.sh
+bash ./bash/Easy_train/run_mech.sh
 
-bash ./bash/Quickly_reproduce/run_mmra.sh
-
-bash ./bash/Quickly_reproduce/run_merge.sh
+bash ./bash/Easy_train/run_mmra.sh
 
 echo "全部执行完毕"
