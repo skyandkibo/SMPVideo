@@ -1,7 +1,5 @@
 dataset/audio/
 dataset/repair_video_train_test/
 dataset/Video/
-dataset/train/
-dataset/test/
 dataset/train_info.csv
 dataset/repair_video/
