@@ -1,5 +1,7 @@
 # SMPVideo
 
+**All environment setup steps are included in the shell script, so there is no need to explicitly show environment installation instructions.**
+
 **Environment Requirements:**  
 - GPU: 3090 24GB cu118  
 
@@ -104,7 +106,7 @@ We believe these minor variations have no significant impact on the final outcom
 
 The overall feature extraction process is time-consuming. Although we provide the `FFmpeg`-repaired videos for download, the entire pipeline still takes significantly more time compared to the `easy_train` steps. Additionally, due to the use of multi-threading during feature extraction, the randomness in the results cannot be completely eliminated.
 
-We recommend following **Step 2**, which is faster and introduces slightly less randomness.
+We recommend following **Easy to Reproduce Training**, which is faster and introduces slightly less randomness.
 ```
 
 1. Download the official dataset from [video_file.zip](https://drive.google.com/drive/folders/1F37YsuZPngqTIDTe-I_yoSFEvLSoVLnt).
