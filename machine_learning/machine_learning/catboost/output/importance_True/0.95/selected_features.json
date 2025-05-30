@@ -1,0 +1,12 @@
+[
+    "log_likes_per_video",
+    "log_user_likes_count",
+    "is_suggested",
+    "len_suggested",
+    "uid_popularity",
+    "log_user_follower_count",
+    "log_digg_pre_like_ratio",
+    "log_followers_per_following",
+    "face_frame_rate",
+    "log_user_video_count"
+]

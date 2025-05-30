@@ -1,0 +1,12 @@
+{
+    "learning_rate": 0.13684616510491773,
+    "max_depth": 4,
+    "subsample": 0.7521514486175322,
+    "colsample_bytree": 0.6154583088302245,
+    "reg_alpha": 0.0018935379589939136,
+    "reg_lambda": 6.271725376850271e-07,
+    "objective": "regression",
+    "n_estimators": 115,
+    "random_state": 42,
+    "verbose": -1
+}

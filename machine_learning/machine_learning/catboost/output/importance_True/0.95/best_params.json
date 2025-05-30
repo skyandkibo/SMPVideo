@@ -1,0 +1,10 @@
+{
+    "learning_rate": 0.052704579022637636,
+    "depth": 10,
+    "l2_leaf_reg": 4.84474309684109,
+    "subsample": 0.8174220123508397,
+    "iterations": 405,
+    "loss_function": "MAPE",
+    "random_seed": 42,
+    "verbose": 0
+}

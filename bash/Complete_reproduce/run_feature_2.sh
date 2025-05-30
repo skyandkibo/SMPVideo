@@ -1,0 +1,46 @@
+#!/bin/bash
+
+# 目标环境路径
+ENV_PATH=../mmra
+
+# 检查环境是否存在
+if [ -d "$ENV_PATH" ]; then
+    echo "Environment already exists at $ENV_PATH. Skipping creation."
+else
+    echo "Creating environment at $ENV_PATH..."
+    conda create -p="$ENV_PATH" python==3.10 pip --yes
+fi
+
+# 获取当前 conda 环境名
+current_env=$(basename "$CONDA_PREFIX")
+
+if [ "$current_env" != "base" ]; then
+  echo "当前环境是 $current_env，切换到 base 环境..."
+  source /root/miniconda3/etc/profile.d/conda.sh
+  conda activate base
+else
+  echo "当前已经在 base 环境"
+fi
+
+# 激活环境
+conda activate "$ENV_PATH"
+
+# 安装指定版本的包
+pip install torch==2.2.2 torchvision==0.17.2 torchaudio==2.2.2 --index-url https://download.pytorch.org/whl/cu118
+pip install -r requirements/mmra_requirement.txt
+
+cd machine_learning
+python feature_engineering/merge.py --model train
+python feature_engineering/merge.py --model test
+python feature_engineering/split_train_val.py
+python feature_engineering/split_time_train_val.py
+cd ..
+
+cd MMRA
+python data/write_pkl.py
+python data/video_frame_capture.py
+python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/train.pkl
+python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/test.pkl
+python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/train.pkl
+python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/test.pkl
+python retriever.py --input_dir ./datasets/tiktok/final_easy_excel --model train_test

@@ -1,0 +1,9 @@
+2025-05-19 19:01:00,701 - INFO - Random Seed: 2024 
+2025-05-19 19:01:00,701 - INFO - Device: cuda:0 
+2025-05-19 19:01:00,701 - INFO - Model: /sss/MyDrive/MMRA/train_results/train_MMRA_tiktok_MSE_2025-05-19_18-45-57/trained_model/model_12.pth 
+2025-05-19 19:01:00,701 - INFO - Dataset: tiktok
+2025-05-19 19:01:00,701 - INFO - Number of retrieved items used in this testing: 10
+2025-05-19 19:01:00,701 - INFO - Alpha: 0.6
+2025-05-19 19:01:00,701 - INFO - Number of frames: 10
+2025-05-19 19:01:00,701 - INFO - Testing Starts!
+2025-05-19 19:01:24,918 - INFO - Test is ended!
