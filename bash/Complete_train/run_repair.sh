@@ -1,5 +1,12 @@
 #!/bin/bash
 
+export TMPDIR=../tmp_smp
+
+# 如果目录不存在，则创建
+if [ ! -d "$TMPDIR" ]; then
+  mkdir -p "$TMPDIR"
+fi
+
 # 获取当前 conda 环境名
 current_env=$(basename "$CONDA_PREFIX")
 
