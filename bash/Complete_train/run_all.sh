@@ -41,4 +41,6 @@ bash ./bash/Complete_train/run_feature_1.sh
 
 bash ./bash/Complete_train/run_feature_2.sh
 
+bash ./bash/Easy_train/run_all.sh
+
 echo "全部执行完毕"
