@@ -43,7 +43,7 @@ python extract_wav.py --input_folder ./dataset/repair_video_train_test/train --o
 python extract_wav.py --input_folder ./dataset/repair_video_train_test/test --output_folder ./dataset/audio/test
 
 cd machine_learning
-python feature_engineering/feature_extraction.py
-python feature_engineering/classfy_content.py --train_path ./output/training_data.csv --test_path ./output/testing_data.csv --output_path ./output/classified_content.csv
+python feature_engineering/feature_engineering.py
+python feature_engineering/classfy_content.py --train_path ./output/training_data.csv --test_path ./output/testing_data.csv
 python feature_engineering/audio.py --audio_folder ../dataset/audio/train --output_csv ./output/train_audio.csv
 python feature_engineering/audio.py --audio_folder ../dataset/audio/test --output_csv ./output/test_audio.csv
