@@ -51,7 +51,7 @@ SMPVideo/
 ~~~
 
 Execute the following command:  
-`bash bash/test/run_all.sh`
+`bash ./bash/test/run_all.sh`
 
 | Log about   | Place to Put the File  |
 |------------|------------------------|
@@ -85,17 +85,65 @@ In theory, all of these files are provided in our GitHub repository, except for 
 The tests revealed that LightGBM is highly related to time, while CatBoost + MLP is more related to the volume of data. Therefore, the data was divided as mentioned above.
 
 Then Execute the following command:  
-`bash bash/Easy_train/run_all.sh`
+`bash ./bash/Easy_train/run_all.sh`
 
 If you want to run a test, 
-simply execute `bash bash/test/run_all.sh`
+simply execute `bash ./bash/test/run_all.sh`
 
 
 **Note:** : After a simple training session, the original weight files will be overwritten.
 
 Moreover, due to the randomness introduced by multithreading, we observed that even with fixed seeds, the training processes of CatBoost, XGBoost, and MLP may still yield slightly different results. In contrast, MMRA does not utilize multithreading, allowing it to consistently produce the same output given identical input.
 
-We believe these minor variations have no significant impact on the final outcome. In theory, repeated runs should eventually reproduce the competition results.
+We believe these minor variations have no significant impact on the final outcome. In theory, repeating the experiment multiple times should eventually reproduce the competition results.
+
+## 3. Complete to Reproduce Training
+
+```markdown
+⚠️ **This step is NOT recommended to run**:
+
+The overall feature extraction process is time-consuming. Although we provide the `FFmpeg`-repaired videos for download, the entire pipeline still takes significantly more time compared to the `easy_train` steps. Additionally, due to the use of multi-threading during feature extraction, the randomness in the results cannot be completely eliminated.
+
+We recommend following **Step 2**, which is faster and introduces slightly less randomness.
+```
+
+1. Download the official dataset from [video_file.zip](https://drive.google.com/drive/folders/1F37YsuZPngqTIDTe-I_yoSFEvLSoVLnt).
+2. Unzip the downloaded file.
+3. Rename the extracted folder to `Video`.
+4. Move the `Video` folder to the `dataset/` directory .
+
+~~~
+SMPVideo/
+├── dataset/
+│ ├── Video/
+│ │ ├── train/
+│ │ ├── test/
+~~~
+
+Then execute the following command:  
+`bash ./bash/Complete_train/run_all.sh`
+
+This project uses `ffmpeg` with `libx264` encoding to repair videos, which is time-consuming (about 3+ days).  
+To save time, we provide repaired videos via Baidu Netdisk:
+
+1. Download [repair.zip](https://pan.baidu.com/s/1JRRNMg836LHTw450EI8agA?pwd=ai8q) and [repair_1.zip](https://pan.baidu.com/s/1hl8QRch5u-16zpODHjmbQQ?pwd=ai8q) from the provided Baidu Netdisk link.
+2. Extract both files.
+3. Rename the extracted folder to `repair_video`.
+4. Move the `repair_video` folder into the `dataset` directory.
+5. When asked, allow the system to overwrite any existing files.
+~~~
+SMPVideo/
+├── dataset/
+│ ├── repair_video/
+│ │ ├── train/
+│ │ ├── test/
+~~~
+
+Then execute the following command:  
+`bash ./bash/Complete_train/run_all.sh --skip repair`
+
+Finally, if you want to run a test, 
+simply execute `bash ./bash/test/run_all.sh`
 
 ## External Code Dependencies
 
@@ -105,5 +153,5 @@ All required environment dependencies and Python packages are installed automati
 
 - **MMRA** (Predicting Micro-video Popularity via Multi-modal Retrieval Augmentation)  
   We have integrated the MMRA implementation directly in this repository under `MMRA/`.  
-  
+
   Original source: [https://github.com/ICDM-UESTC/MMRA](https://github.com/ICDM-UESTC/MMRA)  

@@ -28,7 +28,7 @@ set -e  # 遇到任何一个脚本报错就中止执行
 
 bash ./bash/Complete_train/make_excel.sh
 
-if [[ " ${SKIP_STEPS[@]} " =~ " preprocess " ]]; then
+if [[ " ${SKIP_STEPS[@]} " =~ "repair" ]]; then
   echo "Skipping preprocess step..."
 else
   echo "Running preprocess step..."
@@ -40,6 +40,8 @@ bash ./bash/Complete_train/run_feature_0.sh
 bash ./bash/Complete_train/run_feature_1.sh
 
 bash ./bash/Complete_train/run_feature_2.sh
+
+chmod +x ./bash/Easy_train/run_all.sh
 
 bash ./bash/Easy_train/run_all.sh
 
