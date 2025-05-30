@@ -39,15 +39,15 @@ pip install -r requirements/mmra_requirement.txt
 cd machine_learning
 python feature_engineering/merge.py --model train
 python feature_engineering/merge.py --model test
-python feature_engineering/split_train_val.py
-python feature_engineering/split_time_train_val.py
+python split_train_val.py
+python split_time_train_val.py
 cd ..
 
 cd MMRA
 python data/write_pkl.py
 python data/video_frame_capture.py
-python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/train.pkl
-python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/test.pkl
-python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/train.pkl
-python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel_csv/test.pkl
+python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel/train.pkl
+python data/extract_feature/extract_feature.py --pkl_path ./datasets/tiktok/final_easy_excel/test.pkl
+python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel/train.pkl
+python data/image_to_text_multi_threads/image_to_text.py --pkl_path ./datasets/tiktok/final_easy_excel/test.pkl
 python retriever.py --input_dir ./datasets/tiktok/final_easy_excel --model train_test
