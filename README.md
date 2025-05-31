@@ -85,7 +85,7 @@ simply execute `bash ./bash/test/run_all.sh`
 
 **Note:** : After a simple training session, the original weight files will be overwritten.
 
-Moreover, due to the randomness introduced by multithreading, we observed that even with fixed seeds, the training processes of CatBoost, XGBoost, and MLP may still yield slightly different results. In contrast, MMRA does not utilize multithreading, allowing it to consistently produce the same output given identical input.
+Moreover, due to the randomness introduced by multithreading, we observed that even with fixed seeds, the training processes of CatBoost, XGBoost, and MLP may still yield slightly different results. In contrast, MMRA's training process does not utilize multithreading, allowing it to consistently produce the same output given identical input.
 
 We believe these minor variations have no significant impact on the final outcome. In theory, repeating the experiment multiple times should eventually reproduce the competition results.
 
