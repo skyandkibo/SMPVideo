@@ -115,7 +115,7 @@ SMPVideo/
 Then execute the following command:  
 `bash ./bash/Complete_train/run_all.sh`
 
-This project uses `ffmpeg` with `libx264` encoding to repair videos, which is time-consuming (about 3+ days).  
+This project uses ffmpeg with libx264 encoding to repair videos, which is time-consuming (about 3+ days).  
 To save time, we provide repaired videos via Baidu Netdisk:
 
 1. Download [repair.zip](https://pan.baidu.com/s/1JRRNMg836LHTw450EI8agA?pwd=ai8q) and [repair_1.zip](https://pan.baidu.com/s/1hl8QRch5u-16zpODHjmbQQ?pwd=ai8q) from the provided Baidu Netdisk link.
