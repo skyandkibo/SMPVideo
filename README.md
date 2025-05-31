@@ -55,16 +55,6 @@ SMPVideo/
 Execute the following command:  
 `bash ./bash/test/run_all.sh`
 
-| Log about   | Place to Put the File  |
-|------------|------------------------|
-| mmra (train)  | [Download](https://pan.baidu.com/s/1IIp3CoPK5zVGASqwRDAguw?pwd=cxm6) train_MMRA_tiktok_MSE/         | 
-| mmra (test)   | [Download](https://pan.baidu.com/s/1ML7rVacxcR9nwsSUJkh8Pw?pwd=phwr) test_MMRA_tiktok/          | 
-| catboost(train+test)   |  machine_learning/machine_learning/catboost/output/importance_True/0.95/      | 
-| lightbgm(train+test) | machine_learning/machine_learning/lightbgm/output/importance_True/0.85/          | 
-| mlp(train+test)   | machine_learning/machine_learning/mlp/output/importance_True/catboost/ | 
-
----
-
 In theory, using the same environment, identical inputs, and the provided weights, you should be able to reproduce the results submitted during the competition.  
 If for any reason the results are not consistent with those in the competition, we kindly ask the competition organizers to notify us via email. 
 
