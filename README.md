@@ -1,6 +1,7 @@
 # SMPVideo
 
 **All environment setup steps are included in the shell script, so there is no need to explicitly show environment installation instructions.**
+**merge_result.csv is the submission file**
 
 **Environment Requirements:**  
 - GPU: 3090 24GB cu118  
